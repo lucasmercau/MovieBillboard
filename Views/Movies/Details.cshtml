@@ -1,0 +1,42 @@
+@model MovieBillboard.Models.Movie
+
+@{
+    ViewData["Title"] = "Details";
+    Func<string, string> DisplayValue = value => string.IsNullOrEmpty(value) ? "N/A" : value;
+}
+
+<h1 class="oposite">Details</h1>
+
+<div>
+    <h4 class="oposite">Movie</h4>
+    <hr />
+    
+    <div class="card">
+        <div class="movie-of-the-week">
+            <div class="image-container-details">
+                <img src="@DisplayValue(Model.Poster)" alt="Poster of @DisplayValue(Model.Title)" onerror="this.onerror=null; this.src='/images/missingposter.jpg';">
+            </div>
+            <div class="poster-info">
+                <h2 class="h2-title">@DisplayValue(Model.Title)</h2>
+                <p><b>Title:</b> @DisplayValue(Model.Title)</p>
+                <p><b>Rated:</b> @DisplayValue(Model.Rated)</p>
+                <p><b>Released:</b> @Html.DisplayFor(modelItem => modelItem.Released)</p>
+                <p><b>Runtime:</b> @DisplayValue(Model.Runtime)</p>
+                <p><b>Genre:</b> @DisplayValue(Model.Genre)</p>
+                <p><b>Director:</b> @DisplayValue(Model.Director)</p>
+                <p><b>Actors:</b> @DisplayValue(Model.Actors)</p>
+                <p><b>Plot:</b> @DisplayValue(Model.Plot)</p>
+                <p class="word-break"><b>Poster URL:</b> @DisplayValue(Model.Poster)</p>
+                <p><b>Imdb Rating:</b> @Html.DisplayFor(modelItem => modelItem.ImdbRating)</p>
+                <p><b>Box Office:</b> @DisplayValue(Model.BoxOffice)</p>
+            </div>
+            <br>
+        </div>
+        <div class="edit-delete-padding">
+            <a class="btn btn-primary" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> or
+            <a class="btn btn-danger" asp-action="Delete" asp-route-id="@Model?.Id">Delete</a> |
+            <a class="back" asp-action="Index">Back to List</a>
+        </div>
+    </div>
+</div>
+<partial name="_Background" />

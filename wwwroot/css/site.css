@@ -1,0 +1,266 @@
+:root {
+  --gold: #ffd700;
+  --white: #ffffff;
+  --black: #000000;
+  --navy: #000080;
+  --dark-green: #006400;
+  --burgundy: #800020;
+  --royal-blue: #4169E1;
+  --cream: #fffdd0;
+  --teal: #008080;
+  --charcoal-gray: #36454F;
+  --blush-pink: #ffc0cb;
+  /* Classic Cinematic */
+  --background-cinematic: #000080;
+  --text-cinematic: #ffffff;
+  --accent-gold-cinematic: #ffd700;
+  --accent-silver-cinematic: #c0c0c0;
+  --accent-red-cinematic: #b22222;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  .row-form {
+    display: flex;
+    flex-direction: column !important;
+    align-content: space-around !important;
+  }
+
+  .larger {
+    font-size: larger !important;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+  .movie-of-the-week {
+    flex-direction: column;
+    color: #000000;
+  }
+  .image-container, .image-container-details{
+    margin: 0 auto !important;
+  }
+  .h2-title {
+    margin-top: .5rem !important;
+  }
+  .movies {
+    flex-direction: column !important;
+    align-content: center !important;
+  }
+
+  .form-card {
+    border: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .text-center-wide {
+    text-align: left !important;
+    margin-top: 0 !important;
+  }
+  .acc-nav {
+    display: none;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  min-width: 360px;
+  margin-bottom: 60px;
+}
+
+.body-backg {
+  background-color: var(--background-cinematic); 
+}
+
+hr {
+  background-color: white !important;
+  opacity: 1 !important;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+.oposite {
+  color: var(--text-cinematic);
+}
+/* Container styling */
+.image-container {
+  width: 300px; /* Adjust width as needed */
+  height: auto; /* Adjust height as needed */
+}
+
+/* Image styling and animation */
+.fade-in-image {
+  opacity: 0; /* Initial state */
+  animation: fadeIn 3s ease-in-out forwards; /* Adjust duration as needed */
+}
+
+/* Container for the movie of the week */
+.movie-of-the-week {
+  display: flex;
+  height: auto;
+  align-items: flex-start; /* Align items to the top */
+  padding: 20px;
+  animation: fadeIn 3s ease-in-out forwards; /* Fade-in animation */
+}
+
+/* Image container styling */
+.image-container {
+  width: 300px; /* Adjust width as needed */
+  flex-shrink: 0; /* Prevent the image container from shrinking */
+  margin-right: 20px; /* Space between image and text */
+}
+
+.image-container-details {
+  margin: auto 0;
+  margin-right: 20px;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid #ddd; /* Optional: add a border around the image */
+  border-radius: 5px; /* Optional: add rounded corners to the image */
+}
+
+/* Poster information styling */
+.poster-info {
+  flex: 1; /* Allow the poster-info to take the remaining space */
+  color: #000000;
+}
+
+.poster-info h2 {
+  margin-top: 0; /* Remove the default margin from the top */
+}
+
+.poster-info p {
+  margin: 5px 0; /* Adjust margins between paragraphs */
+}
+
+.card {
+  margin: 0 auto;
+}
+.home-card {
+  max-width: 930px;
+  margin-top: 50px;
+  color: black !important;
+}
+
+.word-break {
+  word-wrap: break-word; /* Allows long words to break and wrap to the next line */
+  word-break: break-all; /* Ensures words break to fit within the container */
+  white-space: normal;
+}
+
+.back {
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+.back-movies {
+  text-decoration: none;
+}
+
+.movies {
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  list-style-type: none;
+  padding: 0;
+}
+
+.product-card {
+  flex: 1 1 45%;
+  margin: 0.25em;
+  padding: 0.5em;
+  max-width: 350px;
+  transition: transform 0.6s ease;
+  color: var(--background-cinematic);
+}
+
+.product-card a {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: scale(0.9);
+}
+
+.product-card h2,
+.product-card h3,
+.product-card p {
+  margin: 0.5em 0;
+  text-decoration: none;
+  color: var(--background-cinematic);
+}
+
+.filter-button {
+  margin-left: .5rem !important;
+  padding: .375rem .75rem !important;
+  color: #fff !important;
+  border-color: #0d6efd;
+  border-radius: 25px !important;
+}
+
+.form-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+  padding: 50px 20px;
+  margin-top: 20px;
+}
+
+.text-wide {
+  margin-top: 5px;
+}
+
+.acc-nav {
+  margin-bottom: 0;
+  padding: .5rem;
+}
+
+.edit-delete-padding {
+  padding: 20px;
+  padding-top: 0;
+}
+
+footer {
+  background-color: white;
+}

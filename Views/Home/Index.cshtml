@@ -1,0 +1,22 @@
+﻿@model MovieBillboard.Models.Movie
+@{
+    ViewData["Title"] = "Home Page";
+    Func<string, string> DisplayValue = value => string.IsNullOrEmpty(value) ? "N/A" : value;
+}
+<div class="card home-card">
+<h1 class="display-4 text-center">Movie of the week:</h1>
+    <div class="movie-of-the-week">
+        <div class="image-container">
+            <img src="@Html.DisplayFor(modelItem => modelItem.Poster)" alt="Poster of @Html.DisplayFor(modelItem => modelItem.Title)" onerror="this.onerror=null; this.src='/images/missingposter.jpg';">
+        </div>
+        <div class="poster-info text-center">
+            <h2 class="h2-title">@Html.DisplayFor(modelItem => modelItem.Title)</h2>
+            <p><b>Released:</b> @Html.DisplayFor(modelItem => modelItem.Released)</p>
+            <p>@DisplayValue(Model.Plot)</p>
+            <p><b>Box Office:</b> @DisplayValue(Model.BoxOffice)</p>
+        </div>
+    </div>
+</div>
+<br>
+<h4 class="text-center oposite">If you want too see all of our movies, <a class="back" asp-controller="Movies" asp-action="Index">Click here!</a></h4>
+<partial name="_Background" />

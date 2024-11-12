@@ -1,0 +1,91 @@
+@model MovieBillboard.Models.Movie
+
+@{
+    ViewData["Title"] = "Delete";
+    Func<string, string> DisplayValue = value => string.IsNullOrEmpty(value) ? "N/A" : value;
+}
+
+<h1 class="oposite">Delete</h1>
+
+<h3 class="oposite">Are you sure you want to delete this?</h3>
+<div>
+    <h4 class="oposite">Movie</h4>
+    <hr />
+    <div class="form-card">
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rated)
+        </dt>
+        <dd class = "col-sm-10">
+            @DisplayValue(Model.Rated)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Released)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Released)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Runtime)
+        </dt>
+        <dd class = "col-sm-10">
+            @DisplayValue(Model.Runtime)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Director)
+        </dt>
+        <dd class = "col-sm-10">
+            @DisplayValue(Model.Director)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Actors)
+        </dt>
+        <dd class = "col-sm-10">
+            @DisplayValue(Model.Actors)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Plot)
+        </dt>
+        <dd class = "col-sm-10">
+            @DisplayValue(Model.Plot)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Poster)
+        </dt>
+        <dd class = "col-sm-10 word-break">
+            @DisplayValue(Model.Poster)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ImdbRating)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ImdbRating)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BoxOffice)
+        </dt>
+        <dd class = "col-sm-10">
+            @DisplayValue(Model.BoxOffice)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a class="back" asp-action="Index">Back to List</a>
+    </form>
+    </div>
+</div>
+<partial name="_Background" />

@@ -1,0 +1,35 @@
+@model IEnumerable<MovieBillboard.Models.Movie>
+
+@{
+    ViewData["Title"] = "Movie Catalog";
+    Func<string, string> DisplayValue = value => string.IsNullOrEmpty(value) ? "N/A" : value;
+}
+}
+
+<h1 class="oposite">Movie Catalog</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create"><b>+</b> Add Movie</a>
+</p>
+<form asp-action="Index">
+    <p>
+        <label><input class="form-control" type="text" name="SearchString" placeholder="Search by title..."/></label>
+        <input class="btn btn-primary filter-button" type="submit" value="Filter" />
+    </p>
+</form>
+<hr>
+<ul class="movies">
+@foreach (var item in Model) {
+<li class="card product-card">
+    <a class="back-movies" asp-action="Details" asp-route-id="@item.Id">
+        <img src="@Html.DisplayFor(modelItem => item.Poster)" alt="Poster of @Html.DisplayFor(modelItem => item.Title)" onerror="this.onerror=null; this.src='/images/missingposter.jpg';">
+        <h3 class="h2-title">@Html.DisplayFor(modelItem => item.Title)</h3>
+        <p>@Html.DisplayFor(modelItem => item.Released)</p>
+        <p><b>Rated:</b> @DisplayValue(item.Rated)</p>
+        <p><b>Genre:</b> @Html.DisplayFor(modelItem => item.Genre)</p>
+        <p><b>Box Office:</b> @DisplayValue(item.BoxOffice)</p>
+    </a>
+</li>
+}
+</ul>
+<partial name="_Background" />
