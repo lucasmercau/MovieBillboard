@@ -4,7 +4,7 @@ If you are using Visual Studio Code, you need to select Program.cs and then Run 
 
 If you are using Visual Studio 2022, you will need to select "Open a proyect or solution", and then select the MovieBillboard.sln on the root, then press "Ctrl" + "F5" to run the program.
 
-Do not forget to have .NET 7.0 or 8.0 installed on your computer.
+Do not forget to have .NET 8.0 installed on your computer.
 ## Authentification
 If you want to try by yourself CRUD you will need an account, you can try: 
 - Account: user1@gmail.com
